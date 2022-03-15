@@ -24,3 +24,6 @@ Route::get('Hola-mundo', function(){
 Route::get('/videos/{nombre}/{aa?}', function($nombre, $aa = null){
     return view('paginas/videos', compact('nombre', 'aa'));
 });
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
