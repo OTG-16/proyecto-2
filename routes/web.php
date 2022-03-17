@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PersonaController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
@@ -18,21 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/personas', function(){
-    $personas = DB::table('personas')->get();
-    //dd($personas);
-    return view('personas.indexPersonas', compact('personas'));
-});
-
-Route::get('/personas/create', function(){
-    return view('personas.formPersonas');
-});
-
-Route::post('/personas/store', function(){
-    //Validación y limpieza
-    //Guardar a DB
-    //Redireccionar
-});
+Route::resource('/persona', PersonaController::class);
 
 Route::get('Hola-mundo', function(){
     return view('paginas/Hola-mundo');
@@ -41,6 +28,15 @@ Route::get('Hola-mundo', function(){
 Route::get('/videos/{nombre}/{aa?}', function($nombre, $aa = null){
     return view('paginas/videos', compact('nombre', 'aa'));
 });
+
+Route::get('bienvenida', function () {
+    return view('bienvenida');
+});
+
+Route::get('contacto', function () {
+    return view('contacto');
+});
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

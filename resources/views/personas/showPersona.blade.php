@@ -24,10 +24,9 @@
             <th>Medida de brazo</th>
             <th>Medida de pecho</th>
             <th>Medida de pierna</th>
-            <th>Acciones</th>
+
         </tr>
 
-        @foreach($personas as $persona)
             <tr>
                 <td>{{$persona->id}}</td>
                 <td>{{$persona->nombre}}</td>
@@ -42,17 +41,7 @@
                 <td>{{$persona->medida_de_brazo}}</td>
                 <td>{{$persona->medida_de_pecho}}</td>
                 <td>{{$persona->medida_de_pierna}}</td>
-                <td>
-                    <a href="/persona/{{ $persona->id }}">Ver detalle</a>
-                    <a href="/persona/{{ $persona->id }}/edit">Editar</a>
-                    <form action="/persona/{{ $persona->id }}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <input type="submit" value="Eliminar">
-                    </form>
-                </td>
             </tr>
-        @endforeach
 
     </table>
 </body>
