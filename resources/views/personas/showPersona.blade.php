@@ -1,29 +1,23 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personas</title>
-</head>
-<body>
-    <h1>Listado de Personas</h1>
-    <a href="/persona/create">Agregar nueva persona</a>
-    <table>
+@extends('layouts.plantillabase')
+
+@section('contenido')
+<h1>Detalle de Persona</h1>
+    <a href="/persona/create" class="btn btn-primary">Agregar nueva persona</a>
+    <table class="table table-dark table-striped mt-4">
         <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Edad</th>
-            <th>Peso</th>
-            <th>Estatura</th>
-            <th>Masa muscular</th>
-            <th>Grasa visceral</th>
-            <th>Grasa corporal</th>
-            <th>Edad metabólica</th>
-            <th>Diferencia de la edad</th>
-            <th>Medida de brazo</th>
-            <th>Medida de pecho</th>
-            <th>Medida de pierna</th>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Peso</th>
+            <th scope="col">Estatura</th>
+            <th scope="col">Masa muscular</th>
+            <th scope="col">Grasa visceral</th>
+            <th scope="col">Grasa corporal</th>
+            <th scope="col">Edad metabólica</th>
+            <th scope="col">Diferencia de la edad</th>
+            <th scope="col">Medida de brazo</th>
+            <th scope="col">Medida de pecho</th>
+            <th scope="col">Medida de pierna</th>
 
         </tr>
 
@@ -44,5 +38,5 @@
             </tr>
 
     </table>
-</body>
-</html>
+@endsection
+
