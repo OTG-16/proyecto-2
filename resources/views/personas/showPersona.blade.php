@@ -1,9 +1,14 @@
-@extends('layouts.plantillabase')
+@extends('adminlte::page')
 
-@section('contenido')
-<h1>Detalle de Persona</h1>
+@section('title', 'Proyecto 2')
+
+@section('content_header')
     <a href="/persona/create" class="btn btn-primary">Agregar nueva persona</a>
-    <table class="table table-dark table-striped mt-4">
+    <h1>Detalle de Persona</h1>
+@stop
+
+@section('content')
+<table class="table table-dark table-striped mt-4">
         <tr>
             <th scope="col">ID</th>
             <th scope="col">Nombre</th>
@@ -38,5 +43,12 @@
             </tr>
 
     </table>
-@endsection
+@stop
 
+@section('css')
+    <link rel="stylesheet" href="/css/admin_custom.css">
+@stop
+
+@section('js')
+    <script> console.log('Hi!'); </script>
+@stop

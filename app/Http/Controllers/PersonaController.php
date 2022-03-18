@@ -7,19 +7,24 @@ use Illuminate\Http\Request;
 
 class PersonaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     private $reglasValidacion = [
         'nombre' => 'required|min:5|max:255',
-        'edad' => ['required'],
-        'peso' => ['required'],
-        'estatura' => ['required'],
-        'masa_muscular' => ['required'],
-        'grasa_visceral' => ['required'],
-        'grasa_corporal' => ['required'],
-        'edad_metabolica' => ['required'],
-        'diferencia_de_la_edad' => ['required'],
-        'medida_de_brazo' => ['required'],
-        'medida_de_pecho' => ['required'],
-        'medida_de_pierna' => 'required'
+        'edad' => ['required', 'numeric'],
+        'peso' => ['required', 'numeric'],
+        'estatura' => ['required', 'numeric'],
+        'masa_muscular' => ['required', 'numeric'],
+        'grasa_visceral' => ['required', 'numeric'],
+        'grasa_corporal' => ['required', 'numeric'],
+        'edad_metabolica' => ['required', 'numeric'],
+        'diferencia_de_la_edad' => ['required', 'numeric'],
+        'medida_de_brazo' => ['required', 'numeric'],
+        'medida_de_pecho' => ['required', 'numeric'],
+        'medida_de_pierna' => 'required|numeric'
     ];
 
     /**

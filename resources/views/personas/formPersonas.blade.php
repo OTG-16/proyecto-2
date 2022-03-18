@@ -1,10 +1,14 @@
-@extends('layouts.plantillabase')
+@extends('adminlte::page')
 
-@section('contenido')
+@section('title', 'Proyecto 2')
+
+@section('content_header')
     <a href="/persona" class="btn btn-primary">Volver al listado de personas</a>
-
     <h1>Agregar Persona</h1>
-    @if ($errors->any())
+@stop
+
+@section('content')
+@if ($errors->any())
         <div class="alert alert-danger">
             <ul>
                 @foreach ($errors->all() as $error)
@@ -24,7 +28,7 @@
         <br>
         <div class="mb-3">
             <label for='nombre'>Nombre de la Persona:</label>
-            <input type="text" name="nombre" class="form-control" tabindex="1" value="{{ isset($persona) ? $persona->nombre : '' }} {{ old('nombre') }}"> 
+            <input type="text" name="nombre" class="form-control" tabindex="1" value="{{ old('nombre') ?? $persona->nombre ?? ''}}"> 
         </div>
         @error('nombre')
             <div class="alert alert-danger">{{ $message }}</div>
@@ -75,5 +79,11 @@
         </div>
         <input type="submit" value="Guardar" class="btn btn-primary" tabindex="13" />
     </form>
-@endsection
+@stop
 
+@section('css')
+    <link rel="stylesheet" href="/css/admin_custom.css">
+@stop
+
+@section('js')
+@stop

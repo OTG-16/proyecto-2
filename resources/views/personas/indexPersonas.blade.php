@@ -1,13 +1,14 @@
-@extends('layouts.plantillabase')
+@extends('adminlte::page')
 
-@section('css')
-<link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css' rel="stylesheet">
-@endsection
+@section('title', 'Proyecto 2')
 
-@section('contenido')
+@section('content_header')
     <a href="/persona/create" class="btn btn-primary">Agregar nueva persona</a>
-    
     <h1>Tabla de Personas</h1>
+@stop
+
+@section('content')
+    
     <table id="personas" class="table table-striped table-bordered shadow-lg mt-4" style="width:100%">
         <thead class="bg-primary text-white">
             <tr>
@@ -56,8 +57,15 @@
             @endforeach
         </tbody>
     </table>
-    @section('js')
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+@stop
+
+@section('css')
+    <link rel="stylesheet" href="/css/admin_custom.css">
+    <link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css' rel="stylesheet">
+@stop
+
+@section('js')
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
 
@@ -68,8 +76,4 @@
             });
         } );
     </script>
-    @endsection
-
-@endsection
-
-
+@stop
